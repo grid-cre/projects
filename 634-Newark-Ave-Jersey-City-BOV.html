@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<title>634 Newark Ave BOV</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{--navy:#1B3A5C;--navy-dark:#122845;--lime:#A8C840;--lime-dark:#8AAF28;--white:#FFFFFF;--off-white:#F5F6F4;--light:#EAECEB;--mid:#8A9099;--text:#1C2B3A;--text-light:#4A5A6A;--border:#D4D8DC;
+    --retail:#E7D7A8;--resi:#BFD3E8;--core:#5E6E80;--svc:#D9DDE2;--open:#E4EDD2;--garden:#B9D59A;--warn:#B4541E;}
+  @media print{
+    body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .no-print{display:none !important;}
+    .hl-card,.table,.overview-grid,.comp-photo-wrap,.metrics,.quick-facts,.header,.ov-item,.massing{break-inside:avoid;page-break-inside:avoid;}
+  }
+  body{background:var(--white);color:var(--text);font-family:'Barlow',sans-serif;font-weight:400;line-height:1.6;}
+  .no-print{position:fixed;top:16px;right:20px;z-index:100;}
+  .print-btn{background:var(--navy);color:#fff;border:none;padding:10px 22px;font-family:'Barlow',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border-radius:2px;}
+  .wrap{max-width:900px;margin:0 auto;padding:0 0 80px;}
+  .header{background:var(--navy);padding:22px 48px 26px;position:relative;}
+  .header::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:3px;background:var(--lime);}
+  .header-logo{display:flex;align-items:center;gap:12px;margin-bottom:28px;}
+  .header-logo-mark{position:relative;width:34px;height:34px;flex:none;}
+  .header-logo-mark .sq1{position:absolute;top:0;left:0;width:24px;height:24px;background:var(--lime);border-radius:2px;}
+  .header-logo-mark .sq2{position:absolute;top:1px;right:0;width:14px;height:14px;background:var(--navy-dark);border:1px solid rgba(255,255,255,0.25);border-radius:1px;}
+  .header-logo-mark .sq3{position:absolute;bottom:0;left:5px;width:12px;height:12px;background:var(--lime-dark);border-radius:1px;}
+  .header-logo-text{line-height:1.2;}
+  .header-logo-name{font-family:'Barlow Condensed',sans-serif;font-size:21px;font-weight:800;letter-spacing:0.02em;text-transform:uppercase;color:#fff;}
+  .header-logo-tag{font-size:10px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:1px;}
+  .header-eyebrow{font-size:11.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--lime);margin-bottom:18px;}
+  .header-address{font-family:'Barlow Condensed',sans-serif;font-size:44px;font-weight:800;line-height:1.0;color:#fff;text-transform:uppercase;margin-bottom:8px;}
+  .header-sub{font-family:'Barlow Condensed',sans-serif;font-size:21px;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;color:var(--lime);}
+  .header-summary{font-size:15.5px;color:rgba(255,255,255,0.82);line-height:1.75;font-weight:400;margin-top:22px;max-width:820px;}
+  .header-summary p + p{margin-top:12px;}
+  .header-summary strong{color:#fff;font-weight:700;}
+  .header-bottom-rule{width:46px;height:3px;background:var(--lime);margin-top:26px;}
+  .metrics{background:var(--navy-dark);display:grid;grid-template-columns:repeat(4,1fr);border-top:3px solid var(--lime);}
+  .metric{padding:16px 12px;text-align:center;border-right:1px solid rgba(255,255,255,0.07);}
+  .metric:last-child{border-right:none;}
+  .metric-num{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--lime);display:block;line-height:1;margin-bottom:3px;}
+  .metric-num.white{color:#fff;}
+  .metric-label{font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);line-height:1.3;}
+  .massing{background:var(--off-white);padding:22px 28px 14px;border-bottom:1px solid var(--border);}
+  .massing svg{width:100%;height:auto;display:block;}
+  .massing-cap{font-size:10.5px;color:var(--mid);font-style:italic;margin-top:6px;}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:10.5px;color:var(--text-light);margin-top:8px;}
+  .legend i{display:inline-block;width:10px;height:10px;margin-right:5px;vertical-align:-1px;border:1px solid var(--border);}
+  .quick-facts{display:grid;grid-template-columns:repeat(6,1fr);background:var(--navy);}
+  .qf-item{padding:14px 10px;text-align:center;border-right:1px solid rgba(255,255,255,0.08);}
+  .qf-item:last-child{border-right:none;}
+  .qf-val{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;color:#fff;display:block;line-height:1;margin-bottom:3px;}
+  .qf-label{font-size:8.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);}
+  .section{padding:32px 48px 0;}
+  .rule{height:3px;background:var(--navy);margin:32px 0 0;position:relative;}
+  .rule::after{content:'';position:absolute;left:0;top:0;width:50px;height:3px;background:var(--lime);}
+  .eyebrow{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--lime-dark);margin-bottom:4px;margin-top:8px;}
+  .h2{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;text-transform:uppercase;color:var(--navy);letter-spacing:0.02em;margin-bottom:14px;}
+  .body{font-size:13.5px;color:var(--text-light);line-height:1.8;}
+  .body strong{color:var(--navy);font-weight:600;}
+  .body p + p{margin-top:10px;}
+  .overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:18px;border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+  .ov-item{display:flex;align-items:stretch;border-bottom:1px solid var(--border);}
+  .ov-item:nth-last-child(-n+2){border-bottom:none;}
+  .ov-key{background:var(--navy);color:rgba(255,255,255,0.65);font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:10px 14px;min-width:130px;display:flex;align-items:center;}
+  .ov-val{background:var(--white);font-size:13px;color:var(--navy);font-weight:600;padding:10px 14px;flex:1;display:flex;align-items:center;border-left:1px solid var(--border);}
+  .ov-item:nth-child(odd){border-right:1px solid var(--border);}
+  .table{width:100%;border-collapse:collapse;margin-top:16px;font-size:12.5px;}
+  .table th{background:var(--navy);color:rgba(255,255,255,0.75);font-size:9.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:10px 12px;text-align:left;}
+  .table th.num{text-align:right;}
+  .table td{padding:9px 12px;border-bottom:1px solid var(--light);color:var(--text-light);}
+  .table td.num{text-align:right;font-variant-numeric:tabular-nums;}
+  .table td.label{color:var(--navy);font-weight:600;}
+  .table td.green{color:#2E7D32;font-weight:600;}
+  .table tr.total td{background:var(--off-white);font-weight:700;color:var(--navy);border-top:2px solid var(--navy);}
+  .table tr.comp-row td{background:#F0F2F4;font-style:italic;}
+  .table tr.sub td{background:var(--off-white);color:var(--navy);font-weight:700;font-size:10px;letter-spacing:.08em;text-transform:uppercase;}
+  .table-scroll{overflow-x:auto;}
+  .highlights{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;}
+  .hl-card{background:var(--off-white);border:1px solid var(--border);border-left:4px solid var(--navy);padding:15px 17px;border-radius:0 4px 4px 0;}
+  .hl-head{font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+  .hl-body{font-size:11.5px;color:var(--text-light);line-height:1.6;}
+  .footnote{font-size:11px;color:var(--mid);font-style:italic;margin-top:10px;}
+  .disclaimer{font-size:10px;color:var(--mid);line-height:1.5;margin-top:28px;padding:0 48px;font-style:italic;}
+  .footer{background:var(--navy);padding:26px 48px;margin-top:40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .footer-left{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#fff;}
+  .footer-left span{color:var(--lime);}
+  .footer-contacts{display:flex;gap:40px;}
+  .footer-contact{font-size:11.5px;color:rgba(255,255,255,0.7);line-height:1.6;}
+  .footer-contact strong{color:#fff;font-size:12px;display:block;margin-bottom:2px;}
+  .footer-tag{font-size:9px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--lime);margin-top:8px;}
+  .thesis{background:var(--navy);color:rgba(255,255,255,0.85);padding:26px 28px;margin-top:22px;border-top:4px solid var(--lime);border-radius:2px;}
+  .thesis-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--lime);}
+  .thesis-head{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;text-transform:uppercase;color:var(--lime);margin:4px 0 10px;}
+  .thesis p{font-size:13.5px;line-height:1.75;}
+  .comp-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.12);margin:16px 0;}
+  .comp-strip div{background:var(--navy-dark);padding:12px 10px;text-align:center;font-size:9.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.5);}
+  .comp-strip span{display:block;font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--lime);letter-spacing:0;text-transform:none;line-height:1.1;margin-bottom:2px;}
+  .thesis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0;}
+  .thesis-grid div{border-left:2px solid var(--lime);padding-left:12px;font-size:12px;line-height:1.6;}
+  .thesis-grid b{display:block;color:var(--lime);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:3px;}
+  .thesis-sub{font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--lime);margin-bottom:8px;}
+  .thesis ul{padding-left:18px;font-size:12.5px;line-height:1.65;display:flex;flex-direction:column;gap:5px;}
+  .thesis ul b{color:#fff;}
+  @media print{.thesis{break-inside:avoid;page-break-inside:avoid;}}
+  @media (max-width:640px){.thesis{padding:20px 18px}.thesis-grid{grid-template-columns:1fr}.comp-strip{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){
+    .header{padding:18px 20px;}
+    .header-address{font-size:30px;}
+    .header-sub{font-size:16px;}
+    .header-summary{font-size:14px;}
+    .metrics{grid-template-columns:repeat(2,1fr);}
+    .metric{border-bottom:1px solid rgba(255,255,255,0.07);}
+    .quick-facts{grid-template-columns:repeat(2,1fr);}
+    .qf-item{border-bottom:1px solid rgba(255,255,255,0.08);}
+    .section{padding:26px 20px 0;}
+    .massing{padding:16px 12px 10px;}
+    .overview-grid{grid-template-columns:1fr;}
+    .ov-item:nth-child(odd){border-right:none;}
+    .ov-item{border-bottom:1px solid var(--border);}
+    .highlights{grid-template-columns:1fr;}
+    .footer{padding:22px 20px;flex-direction:column;align-items:flex-start;}
+    .disclaimer{padding:0 20px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="no-print">
+  <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+</div>
+
+<div class="wrap">
+
+  <div class="header">
+    <div class="header-logo">
+      <div class="header-logo-mark"><span class="sq1"></span><span class="sq2"></span><span class="sq3"></span></div>
+      <div class="header-logo-text">
+        <div class="header-logo-name">Grid</div>
+        <div class="header-logo-tag">Real Estate &middot; Brokers &amp; Advisors</div>
+      </div>
+    </div>
+    <div class="header-eyebrow">Broker Opinion of Value &middot; Comparative Market Analysis</div>
+    <div class="header-address">634 Newark Avenue</div>
+    <div class="header-sub">Jersey City, NJ 07306 &middot; Journal Square &middot; Newark Ave Corridor</div>
+    <div class="header-summary">
+      <p>634 Newark Avenue (Block 8101, Lot 30) is a <strong>4,792 SF</strong> lot, roughly 26' wide by 185' deep, in <strong>Zone 5 (Commercial Main Street)</strong> of the Journal Square 2060 Redevelopment Plan. It is improved with a three-story mixed-use building of <strong>3,246 SF</strong>: ground-floor retail with two market-rate apartments above. The building covers only the front ~42' of the lot, leaving the rear three-quarters undeveloped.</p>
+      <p>We estimate value at <strong>$1.75M&ndash;$1.95M</strong> as a <strong>condominium development site</strong>, with a recommended list price of <strong>$1,950,000</strong>. Grid's schematic massing supports a <strong>five-story, ~12,800 GSF elevator building with 10 units</strong>, roughly four times today's floor area. Pricing is anchored to the August 2026 sale of <strong>361 Central Avenue</strong>, an inline lot bought by a builder for a 14-unit condo project at <strong>$185,714 per door</strong>. Our range runs from <strong>$175,000 to $195,000 per door</strong>, 94% to 105% of that basis.</p>
+    </div>
+    <div class="header-bottom-rule"></div>
+  </div>
+
+  <div class="metrics">
+    <div class="metric"><span class="metric-num white">$1,950,000</span><span class="metric-label">List Price</span></div>
+    <div class="metric"><span class="metric-num">$1.95M</span><span class="metric-label">Opportunistic</span></div>
+    <div class="metric"><span class="metric-num">$1.825M</span><span class="metric-label">Base</span></div>
+    <div class="metric"><span class="metric-num">$1.75M</span><span class="metric-label">Conservative</span></div>
+  </div>
+
+  <div class="massing">
+    <svg viewBox="0 0 820 300" role="img" aria-label="Massing section of the 10-unit concept">
+      <!-- scale: 4px per foot; x0=30, grade y=270; y = 270 - ft*4 -->
+      <g stroke="#1C2B3A" stroke-opacity=".35" font-family="Barlow,sans-serif" font-size="11" fill="#1C2B3A">
+        <rect x="30" y="214" width="160" height="56" fill="var(--retail)"/>
+        <rect x="190" y="54" width="60" height="216" fill="var(--core)"/>
+        <rect x="250" y="214" width="120" height="56" fill="var(--svc)"/>
+        <rect x="370" y="222" width="140" height="48" fill="var(--resi)"/>
+        <rect x="510" y="267" width="60" height="3" fill="var(--open)"/>
+        <rect x="570" y="222" width="140" height="48" fill="var(--resi)"/>
+        <rect x="710" y="264" width="60" height="6" fill="var(--garden)"/>
+        <rect x="30" y="54" width="160" height="160" fill="var(--resi)"/>
+        <rect x="250" y="54" width="120" height="160" fill="var(--resi)"/>
+        <rect x="370" y="216" width="140" height="6" fill="var(--open)"/>
+        <rect x="570" y="216" width="140" height="6" fill="var(--open)"/>
+        <line x1="30" x2="190" y1="174" y2="174"/><line x1="30" x2="190" y1="134" y2="134"/><line x1="30" x2="190" y1="94" y2="94"/>
+        <line x1="250" x2="370" y1="174" y2="174"/><line x1="250" x2="370" y1="134" y2="134"/><line x1="250" x2="370" y1="94" y2="94"/>
+      </g>
+      <g font-family="Barlow,sans-serif" font-size="11" fill="#1C2B3A" text-anchor="middle">
+        <text x="110" y="246">Retail</text><text x="310" y="246">Lobby / svc</text>
+        <text x="440" y="250">Garden 1</text><text x="640" y="250">Garden 2</text><text x="740" y="258">Yard</text>
+        <text x="110" y="138">1BR &times; 4</text><text x="310" y="138">1BR &times; 4</text>
+        <text x="220" y="40" font-size="10" fill="#4A5A6A">Elevator core</text>
+        <text x="540" y="210" font-size="10" fill="#4A5A6A">Roof deck &middot; light court</text>
+      </g>
+      <path d="M30 54 H710 V214 H770" fill="none" stroke="var(--warn)" stroke-dasharray="5 4" stroke-width="1.5"/>
+      <text x="706" y="48" text-anchor="end" font-family="Barlow,sans-serif" font-size="10" fill="var(--warn)">Est. envelope: 5 stories / 54'</text>
+      <line x1="10" x2="790" y1="270" y2="270" stroke="#1C2B3A" stroke-width="2"/>
+      <g font-family="Barlow,sans-serif" font-size="10" fill="#8A9099" text-anchor="middle">
+        <text x="30" y="286">0'</text><text x="370" y="286">85'</text><text x="570" y="286">135'</text><text x="770" y="286">185'</text>
+        <text x="60" y="298" text-anchor="start">NEWARK AVE &rarr;</text>
+      </g>
+    </svg>
+    <div class="legend">
+      <span><i style="background:var(--retail)"></i>Retail</span><span><i style="background:var(--resi)"></i>Residential</span>
+      <span><i style="background:var(--core)"></i>Elevator / stair core</span><span><i style="background:var(--svc)"></i>Lobby &amp; service</span>
+      <span><i style="background:var(--open)"></i>Roof deck / court</span><span><i style="background:var(--garden)"></i>Private yard</span>
+    </div>
+    <div class="massing-cap">Grid schematic massing: five-story elevator building, eight 1BRs above, two rear garden units (requires Planning Board design waiver), continuous cellar. Not an architectural plan.</div>
+  </div>
+
+  <div class="quick-facts">
+    <div class="qf-item"><span class="qf-val">Zone 5</span><span class="qf-label">JS 2060</span></div>
+    <div class="qf-item"><span class="qf-val">4,792 SF</span><span class="qf-label">Lot Size</span></div>
+    <div class="qf-item"><span class="qf-val">2.68x</span><span class="qf-label">Massing FAR</span></div>
+    <div class="qf-item"><span class="qf-val">5 St / 54'</span><span class="qf-label">Est. Max Height</span></div>
+    <div class="qf-item"><span class="qf-val">~12,800</span><span class="qf-label">Massing GSF</span></div>
+    <div class="qf-item"><span class="qf-val">10</span><span class="qf-label">Est. Units</span></div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Value Drivers</div>
+    <div class="h2">Site Highlights</div>
+    <div class="highlights">
+      <div class="hl-card"><div class="hl-head">Under-Built Lot</div><div class="hl-body">The existing building uses about 42' of a 185'-deep lot. A buyer is paying for land that can hold roughly four times today's 3,246 SF.</div></div>
+      <div class="hl-card"><div class="hl-head">10-Unit Elevator Concept</div><div class="hl-body">Eight upper-floor units plus two rear garden residences over a continuous cellar, sized for a boutique condo offering. Zone 5 projects are exempt from the affordable set-aside, and no parking is permitted on lots under 60' wide.</div></div>
+      <div class="hl-card"><div class="hl-head">Ground-Zero Condo Site at the PATH</div><div class="hl-body">A short walk to the Journal Square PATH station and bus terminal, Jersey City's central transit hub. That location sells condos: a one-seat ride to Manhattan is what end buyers pay for.</div></div>
+      <div class="hl-card"><div class="hl-head">Upside Not Priced In</div><div class="hl-body">The 10-unit program assumes upper floors stop 85' from Newark Ave. If Zone 5 allows deeper floor plates, or the rear of the lot gains frontage on the planned Central Avenue Extension, the unit count could rise further.</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="rule"></div>
+    <div class="eyebrow">Model Comparison</div>
+    <div class="h2">Value Build-Out by Scenario</div>
+    <div class="body"><p>Each scenario holds Grid's 10-unit massing constant and prices it per door against 361 Central Avenue, a recent small-lot condo land sale in Jersey City.</p></div>
+    <div class="table-scroll">
+      <table class="table">
+        <thead>
+          <tr><th>Metric</th><th class="num">361 Central (Comp)</th><th class="num">Opportunistic</th><th class="num">Base</th><th class="num">Conservative</th></tr>
+        </thead>
+        <tbody>
+          <tr class="comp-row"><td class="label">Lot Size (SF)</td><td class="num">4,366</td><td class="num" colspan="3" style="text-align:center;">4,792 (subject, all scenarios)</td></tr>
+          <tr class="comp-row"><td class="label">Buildable GSF</td><td class="num">22,000</td><td class="num" colspan="3" style="text-align:center;">~12,822 (subject, all scenarios)</td></tr>
+          <tr class="comp-row"><td class="label">Unit Count</td><td class="num">14</td><td class="num" colspan="3" style="text-align:center;">10 (subject, all scenarios)</td></tr>
+          <tr><td class="label">Total Value</td><td class="num">$2,600,000</td><td class="num green">$1,950,000</td><td class="num">$1,825,000</td><td class="num">$1,750,000</td></tr>
+          <tr><td class="label">$ / Door</td><td class="num">$185,714</td><td class="num">$195,000</td><td class="num">$182,500</td><td class="num">$175,000</td></tr>
+          <tr><td class="label">$ / Buildable SF</td><td class="num">$118</td><td class="num">$152</td><td class="num">$142</td><td class="num">$136</td></tr>
+          <tr><td class="label">Land $ / SF</td><td class="num">$596</td><td class="num">$407</td><td class="num">$381</td><td class="num">$365</td></tr>
+          <tr class="total"><td class="label">% of Comp $/Door</td><td class="num">100%</td><td class="num">105%</td><td class="num">98%</td><td class="num">94%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="footnote">Pricing is set on a per-door basis, which is how condo builders underwrite small sites. Per buildable foot the subject prices above the comp because its program uses smaller, more efficient units, and a buyer pays for saleable doors. Opportunistic reflects 634 Newark's Journal Square PATH proximity and its existing income during the approval period.</div>
+  </div>
+
+  <div class="section"><div class="thesis">
+      <div class="thesis-eyebrow">Comparable Support &middot; Marketing Thesis</div>
+      <div class="thesis-head">A Condo-Only Offering, Priced Off 361 Central</div>
+      <p>We will market 634 Newark exclusively to condo developers on the development return. Pricing it on a cap rate, or against buildings that traded on cash flow, leaves money on the table.</p>
+      <div class="comp-strip">
+        <div><span>$2.6M</span>361 Central &middot; Aug 2026</div>
+        <div><span>14</span>Condo units over retail</div>
+        <div><span>4,366 SF</span>Inline lot</div>
+        <div><span>$185,714</span>Per door</div>
+      </div>
+      <p>Listed at $2.25M, it was flipped to a builder planning high-end condos at 16% over ask. It sits in a different, arguably weaker submarket, but it is the same retail-anchored corridor site, and a savvy builder is comfortable at that basis. 634 Newark offers it a short walk from the PATH.</p>
+      <div class="thesis-grid">
+        <div><b>Who we target</b>Condo-only builders who underwrite per door and to a development IRR.</div>
+        <div><b>How we price</b>Per saleable door, at 94&ndash;105% of a closed builder deal.</div>
+        <div><b>How we win</b>Give the right buyer approval runway. Full entitlement drives the highest exit for the family.</div>
+      </div>
+      <div class="thesis-sub">Objections we are ready for</div>
+      <ul>
+        <li><b>&ldquo;It's overpriced.&rdquo;</b> It is priced at what a builder just paid per door.</li>
+        <li><b>&ldquo;The cap rate doesn't work.&rdquo;</b> It's not a hold; the return comes at condo sell-out.</li>
+        <li><b>&ldquo;Taxes are rising.&rdquo;</b> A builder carries them only through approvals and construction, and existing rent offsets the carry.</li>
+      </ul>
+    </div></div>
+
+  <div class="disclaimer">This Broker Opinion of Value / Comparative Market Analysis is provided by Grid Real Estate, LLC for informational purposes only and does not constitute an appraisal. Values are derived from a single comparable development-site sale (361 Central Avenue) applied on a per-door basis. Buildable GSF, unit counts and height are estimates from Grid's schematic massing study and are subject to a zoning determination, survey and architectural review. The 10-unit program includes two ground-floor garden units that require a Planning Board design waiver; without them the program is 8 units. All figures should be independently verified before use in any transaction or financing decision.</div>
+
+  <div class="footer">
+    <div class="footer-left">GRID <span>RE</span></div>
+    <div class="footer-contacts">
+      <div class="footer-contact">
+        <strong>Greg Edgell</strong>
+        greg@gridcre.com<br>
+        C: 973.886.2385 &middot; O: 201.300.6489<br>
+        Grid Real Estate, LLC
+        <div class="footer-tag">201 Marin Blvd, Unit 106 &middot; Jersey City, NJ</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
